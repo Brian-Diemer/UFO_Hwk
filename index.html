@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>UFO </title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.5.1/css/tabulator_midnight.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <div class="p-3 mb-2 bg-dark text-white">
+            <h1 class="text-center">The Truth Is Out There...</h1>
+    </div>
+    <div class="container">     
+        <iframe style="display: block; margin: auto;" width="800" height="400" src="https://www.youtube.com/embed/nqi4QNFXu-c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="row text-center">
+        <div class="col-sm-12">
+              <h3>Search the table below to see for yourself</h3>
+        </div>
+    </div>
+</head>
+
+ <body>
+    <div id="UFO-table"></div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.5.1/js/tabulator.min.js"></script>
+    <script src="Data/data.js"></script>
+    <script type="text/javascript">
+
+    $("#UFO-table").tabulator({
+        index :"datetime",
+        height:"550px",
+        pagination:"local",
+        layout:"fitColumns",
+        columns:[
+            {title:"Date", field:"datetime",headerFilter:"input", width:100},
+            {title:"City", field:"city", headerFilter:"input",width:150},
+            {title:"State",field:"state", headerFilter:"input",width:75},
+            {title:"Country", field:"country", headerFilter:"input",width:75},
+            {title:"Shape",field:"shape", headerFilter:"input",width:150},
+            {title:"Duration",field:"durationMinutes", headerFilter: "input", width:150},
+            {title:"Comments", field:"comments", headerFilter: "input", formatter:"textarea"},
+        ],data:dataSet,
+    });
+     </script>
+    <div class="row text-center">
+            <div class="col-sm-12">
+                  <h3>    </h3>
+            </div>
+        </div>     
+ </body>
+</html>
